@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const CLIENT_ID = "080efc3515834107aa2c09e0300a3673";
-const REDIRECT_URI = "https://lianamina.github.io/cs378-p4";
+const REDIRECT_URI =  window.location.hostname === "localhost"
+? "http://localhost:3000"
+: "https://lianamina.github.io/cs378-p4";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 const SCOPES = [
