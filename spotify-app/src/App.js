@@ -1,11 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-
 import React, { useState, useEffect } from "react";
 import { getAuthUrl, getAccessToken, fetchSongs } from "./spotifyApi";
 import SearchBar from "./SearchBar";
 import SongList from "./SongList";
 import Chart from "./Chart";
+import "./index.css";
 
 const App = () => {
   const [token, setToken] = useState(null);
@@ -33,10 +31,10 @@ const App = () => {
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl">Spotify Search</h1>
+    <div className="container">
+      <h1>Spotify Search</h1>
       <SearchBar onSearch={handleSearch} />
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="error">{error}</p>}
       <SongList songs={songs} />
       {songs.length > 0 && <Chart songs={songs} />}
     </div>

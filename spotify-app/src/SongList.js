@@ -2,12 +2,14 @@ import React from "react";
 
 const SongList = ({ songs }) => {
   return (
-    <div className="p-4">
-      {songs.length === 0 ? <p>No results found.</p> : (
+    <div className="song-list">
+      {songs.length === 0 ? (
+        <p>No results found.</p>
+      ) : (
         <ul>
           {songs.map((song) => (
-            <li key={song.id} className="border-b p-2">
-              <img src={song.album.images[0].url} alt={song.name} width="50" />
+            <li key={song.id} className="song-item">
+              <img src={song.album.images[0].url} alt={song.name} />
               <strong>{song.name}</strong> - {song.artists[0].name}
             </li>
           ))}
