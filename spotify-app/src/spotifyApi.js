@@ -23,3 +23,5 @@ export const fetchSongs = async (query, token) => {
   });
   return response.data.tracks.items;
 };
+
+
